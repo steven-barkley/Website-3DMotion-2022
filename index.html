@@ -11,5 +11,32 @@
     <p class="centerText">Steven a solitary coder was typing away..</p>
     <p class="centerText">Line by line he played the keyboard</p>
     <p class="centerText">Again and again he rhymed paragraphs upon paragraphs</p>
+
+
+    <script src="js/three.js"></script>
+		<script>
+      // Our Javascript will go here.
+
+      // Adding Scene 
+      var scene = new THREE.Scene();
+      // Adding Camera type
+      var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+      // Adding Renderer
+      var renderer = new THREE.WebGLRenderer();
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      document.body.appendChild( renderer.domElement );
+
+      // Our Object will go here 
+
+      var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+      var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+      var cube = new THREE.Mesh( geometry, material );
+      
+      // Adding cube object to scene
+      scene.add( cube );
+      
+      // Set camera position relative to obeject
+      camera.position.z = 5;
+		</script>
   </body>
 </html>
