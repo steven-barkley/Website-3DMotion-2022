@@ -1,5 +1,18 @@
-body {
-    color: white;
-    background-color: black;
-    align-self: center;
-  }
+body 
+{  
+  background-color: black;   
+}
+p 
+{
+  color : royalblue;
+}
+
+.centerText 
+{
+  text-align: center;
+}
+
+.stylized
+{
+  font-family: fantasy;
+}
