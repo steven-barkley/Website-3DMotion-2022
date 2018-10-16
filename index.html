@@ -29,7 +29,7 @@
       // Our Object will go here 
 
       var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-      var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+      var material = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
       var cube = new THREE.Mesh( geometry, material );
       
       // Adding cube object to scene
@@ -37,6 +37,14 @@
       
       // Set camera position relative to obeject
       camera.position.z = 5;
+      
+      // Animate loop added
+      function animate() 
+      {
+	      requestAnimationFrame( animate );
+	      renderer.render( scene, camera );
+      }
+      animate();
 		</script>
   </body>
 </html>
