@@ -1,52 +1,70 @@
 <html>
-  <head>
-	<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    
-    <p class="centerText stylized">Fireside Story</p>
 
-    <p class="centerText">It was a dark and stormy night...</p>
-    <p class="centerText">Steven a solitary coder was typing away..</p>
-    <p class="centerText">Line by line he played the keyboard</p>
-    <p class="centerText">Again and again he rhymed paragraphs upon paragraphs</p>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <title>D3.JS Learn</title> If uncommented runs last-->
 
-    <script src="js/three.js"></script>
-		<script>
-      // Our Javascript will go here.
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
 
-      // Adding Scene 
-      var scene = new THREE.Scene();
-      // Adding Camera type
-      var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-      // Adding Renderer
-      var renderer = new THREE.WebGLRenderer();
-      renderer.setSize( window.innerWidth, window.innerHeight );
-      document.body.appendChild( renderer.domElement );
+<body>
+  <h2 class="centerText">D3.js is Easy to Use</h2>
+  <p class="centerText">The script below selects the body element and appends a paragraph with the text "Hello D3.JS":
+  </p>
 
-      // Our Object will go here 
+  <script>
+    // D3 "calls 3D library" .select "body => element" .text "Insert text values" 
+    d3.select( "body" ).append( "p" ).text( "Hello D3.JS!" );
+    d3.select( "head" ).append( "title" ).text( "Let's Learn D3.JS" );
+  </script>
 
-      var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-      var material = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
-      var cube = new THREE.Mesh( geometry, material );
-      
-      // Adding cube object to scene
-      scene.add( cube );
-      
-      // Set camera position relative to obeject
-      camera.position.z = 5;
-      
-      // Animate loop added
-      function animate() 
-      {
-        requestAnimationFrame( animate );
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-	      renderer.render( scene, camera );
-      }
-      animate();
-		</script>
-  </body>
+  <h2 class="centerText stylized">Rotating Red Cube</h2>
+  <!--
+  <p class="centerText">It was a dark and stormy night...</p>
+  <p class="centerText">Steven a solitary coder was typing away..</p>
+  <p class="centerText">Line by line he played the keyboard</p>
+  <p class="centerText">Again and again he rhymed paragraphs upon paragraphs</p>
+-->
+
+  <script src="js/three.js"></script>
+  <script>
+    // Our Javascript will go here.
+
+    // Adding Scene 
+    var scene = new THREE.Scene();
+    // Adding Camera type
+    var camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 2000 );
+    // Adding Renderer
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+
+    // Our Object will go here 
+
+    var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+    var material = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
+    var cube = new THREE.Mesh( geometry, material );
+
+    // Adding cube object to scene
+    scene.add( cube );
+
+    // Set camera position relative to obeject
+    camera.position.z = 5;
+
+    // Animate loop added
+    function animate() {
+      requestAnimationFrame( animate );
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+      renderer.render( scene, camera );
+    }
+    animate();
+  </script>
+</body>
+
 </html>
