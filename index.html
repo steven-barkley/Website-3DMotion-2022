@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <h2 class="centerText">D3.js is Easy to Use</h2>
+  <h2 class="centerText stylized">D3.js is Easy to Use</h2>
   <p class="centerText">The script below selects the body element and appends a paragraph with the text "Hello D3.JS":
   </p>
 
@@ -23,7 +23,7 @@
     d3.select( "head" ).append( "title" ).text( "Let's Learn D3.JS" );
   </script>
 
-  <h2 class="centerText stylized">Rotating Red Cube</h2>
+  <h2 class="centerText stylized">Below is an three.js example</h2>
   <!--
   <p class="centerText">It was a dark and stormy night...</p>
   <p class="centerText">Steven a solitary coder was typing away..</p>
@@ -65,6 +65,61 @@
     }
     animate();
   </script>
+
+  <h2 class="centerText stylized">D3.js Scatter-Plot</h2>
+
+  <svg id="myPlot" style="width:500px;height:500px"></svg>
+
+  <script>
+    // Set Dimensions
+    const xSize = 500;
+    const ySize = 500;
+    const margin = 40;
+    const xMax = xSize - margin * 2;
+    const yMax = ySize - margin * 2;
+
+    // Create Random Points
+    const numPoints = 100;
+    const data = [];
+    for ( let i = 0; i < numPoints; i++ ) {
+      data.push( [ Math.random() * xMax, Math.random() * yMax ] );
+    }
+
+    // Append SVG Object to the Page
+    const svg = d3.select( "#myPlot" )
+      .append( "svg" )
+      .append( "g" )
+      .attr( "transform", "translate(" + margin + "," + margin + ")" );
+
+    // X Axis
+    const x = d3.scaleLinear()
+      .domain( [ 0, 500 ] )
+      .range( [ 0, xMax ] );
+
+    svg.append( "g" )
+      .attr( "transform", "translate(0," + yMax + ")" )
+      .call( d3.axisBottom( x ) );
+
+    // Y Axis
+    const y = d3.scaleLinear()
+      .domain( [ 0, 500 ] )
+      .range( [ yMax, 0 ] );
+
+    svg.append( "g" )
+      .call( d3.axisLeft( y ) );
+
+    // Dots
+    svg.append( 'g' )
+      .selectAll( "dot" )
+      .data( data ).enter()
+      .append( "circle" )
+      .attr( "cx", function ( d ) { return d[ 0 ] } )
+      .attr( "cy", function ( d ) { return d[ 1 ] } )
+      .attr( "r", 3 )
+      .style( "fill", "Red" );
+  </script>
+
+
 </body>
 
 </html>
