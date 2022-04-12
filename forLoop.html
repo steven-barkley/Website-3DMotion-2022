@@ -65,7 +65,36 @@
         }
         document.getElementById( "forIn" ).innerHTML = emptySentence;
     </script>
+    <h2>For in Over Arrays</h2>
+    <p id="forArray"></p>
+    <script>
+        const numbers = [ 45, 4, 9, 16, 25 ];
 
+        let txt = "";
+        for ( let x in numbers ) {
+            txt += numbers[ x ] + ", "
+            document.getElementById( "forArray" ).innerHTML = txt;
+        }
+    </script>
+
+    <h2>For Each </h2>
+    <p id="forEach"></p>
+    <script>
+        numbers.forEach( myFunction );
+
+        function myFunction() {
+            return "Eat Butt!"
+        };
+
+        document.getElementById( "forEach" ).innerHTML = myFunction();
+    </script>
+
+    <script>
+        <h2>New Map Method()</h2>
+        // Create a Map
+
+        const fruits = new Map;
+    </script>
 </body>
 
 </html>
