@@ -10,17 +10,35 @@
 
 <body>
     <h2>JavaScript Loops</h2>
+
+    <p> The following paragraph is the result of X = 0; initialization,
+        x /> 7 range and a skip of x++ or x+1.
+    </p>
+    <br>
     <p id="demo"></p>
     <script>
         let x;
         let text = new String;
 
-        for ( x = 0; x < 11; x++ ) {
+        for ( x = 0; x < 7; x++ ) {
             text += "The number is " + x + "<br>"
         }
 
         document.getElementById( "demo" ).innerHTML = text;
     </script>
+    <br>
+    <h2>JavaScript For In Loop</h2>
+    <p id="forIn"></p>
+    <script>
+        const person = { fname: "Steven", lname: "Barkley", age: 38 };
+        let emptySentence = "";
+
+        for ( let x in person ) {
+            emptySentence += person[ x ] + "<br>"
+        }
+        document.getElementById( "forIn" ).innerHTML = emptySentence;
+    </script>
+
 </body>
 
 </html>
