@@ -95,6 +95,24 @@
 
         const fruits = new Map;
     </script>
+    <p id="calcBill"></p>
+    <script>
+        const food = 200
+        const electric = 60
+        const rent = 1200
+        const gas = 240
+        const insurance = 167
+        const carLoan = 467
+        const leisure = 200
+
+        function calcBills( food, electric, rent, gas, insurance, carLoan, leisure ) {
+
+            let totalBills = 0;
+            totalBills = food + electric + rent + gas + insurance + carLoan + leisure;
+            return totalBills;
+        };
+        document.getElementById( "calcBill" ).innerHTML = calcBills( 200, 60, 1200, 240, 167, 467, 200 );
+    </script>
 </body>
 
 </html>
